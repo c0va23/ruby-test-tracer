@@ -14,7 +14,7 @@ RSpec.configure do |config|
   end
 
   def build_span_context(opts = {})
-    Test::SpanContext.new({
+    Test::SpanContext.new(**{
       trace_id: Test::IdProvider.generate,
       span_id: Test::IdProvider.generate
     }.merge(opts))
